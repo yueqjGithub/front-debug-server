@@ -8,7 +8,7 @@ server:
 
 properties:
   logback:
-    path: ${log.path}
+    path: ${logback.path}
 #参数
 spring:
   datasource:

@@ -1,9 +1,7 @@
 package com.example.front_debug_server.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.front_debug_server.dto.RequestDto;
-import com.example.front_debug_server.http.HttpError;
 import com.example.front_debug_server.http.HttpResp;
 import com.example.front_debug_server.model.Record;
 import com.example.front_debug_server.service.RecordService;
@@ -38,6 +36,6 @@ public class RecordController {
     @GetMapping("")
     public HttpResp<List<Record>> getRecord () {
         List<Record> list = recordService.list();
-        return HttpResp.ok(recordService.list());
+        return HttpResp.ok(list);
     }
 }

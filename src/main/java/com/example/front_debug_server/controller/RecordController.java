@@ -13,6 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -32,5 +33,11 @@ public class RecordController {
     public HttpResp<?> deleteRecord () {
         recordService.remove(new QueryWrapper<>());
         return HttpResp.ok();
+    }
+
+    @GetMapping("")
+    public HttpResp<List<Record>> getRecord () {
+        List<Record> list = recordService.list();
+        return HttpResp.ok(recordService.list());
     }
 }
